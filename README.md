@@ -2,24 +2,43 @@
 
 #build the image
 
-docker image build -t php_web_server .
+docker-compose -f docker-compose.yml build
 
 #list the images
 
+docker-compose images
+
 docker image ls
 
-#run the image in a container in detached mode
+#run the containers for the images of this docker compose file, in detached mode
 
-docker container run -dit --name php_container_1 -p 8080:80 php_web_server
+#this also builds the images if not present already
+
+docker-compose -f docker-compose.yml up -d
 
 #list the comtainers
 
 docker container ls -a
 
+docker-compose ps
+
+#rebuild the images if compose file has changed, and run the containers
+
+docker-compose -f docker-compose.yml up --build -d
+
 #check the docker logs
 
 docker logs eaefbe528ab0
 
+#display running services
+
+docker-compose ps --services
+
+#dispplay running processes
+
+docker-compose top
+docker-compose top web
+
 #run the curl to verify that app is working
 
-curl http://localhost:8080
+curl http://localhost:5001
