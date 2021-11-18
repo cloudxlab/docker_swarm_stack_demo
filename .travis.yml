@@ -1,0 +1,20 @@
+language: generic
+
+services: 
+  - docker
+
+deploy: 
+  provider: elasticbeanstalk
+  region: ap-south-1
+  app: "my-first-app"
+  env: "Myfirstapp-env"
+
+  access_key_id: $AWS_ACCESS_KEYS
+  secret_access_key: $AWS_SECRET_KEYS
+
+  bucket_name: "my-first-app-bucketmkm"
+
+  bucket_path: "docker"
+
+  on:
+    branch: master
