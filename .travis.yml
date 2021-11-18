@@ -9,8 +9,8 @@ deploy:
   app: "my-first-app"
   env: "Myfirstapp-env"
 
-  access_key_id: $AWS_ACCESS_KEYS
-  secret_access_key: $AWS_SECRET_KEYS
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
 
   bucket_name: "my-first-app-bucketmkm"
 
