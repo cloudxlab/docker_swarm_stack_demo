@@ -21,5 +21,3 @@ def get_hit_count():
 def hello():
     count = get_hit_count()
     return 'Hello There World Bye! You have come here now {} times.\n'.format(count)
-
-
