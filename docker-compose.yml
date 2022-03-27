@@ -2,6 +2,7 @@ version: "3.3"
 services:
   web:
     build: .
+    image: manojkmhub/flask_stack_app:latest
     ports:
       - "5000:5000"
       - "5001:5000"
